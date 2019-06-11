@@ -10,8 +10,8 @@ app.use(bodyparser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
 const randomImage = faker.image.fashion();
+//http://lorempixel.com/640/480/fashion
 
 app.get('/', (req, res) => res.send(randomImage));
-console.log(randomImage);
 
 app.listen(port, () => console.log(`app listening on port ${port}`));
