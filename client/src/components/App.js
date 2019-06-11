@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Discovery } from 'aws-sdk';
+//import { Discovery } from 'aws-sdk';
 
 class App extends Component {
 	render () {

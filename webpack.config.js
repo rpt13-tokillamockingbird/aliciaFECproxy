@@ -1,14 +1,16 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+//const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const SRC_DIR = path.join(__dirname, '/client/src');
+const DIST_DIR = path.join(__dirname, '/client/dist');
+
 module.exports = {
-	entry: {
-		main: './src/index.js'
-	},
+	mode: 'development',
+	entry: `${SRC_DIR}/index.js`,
 	output: {
-		filename: '[name].[hash].js',
-		path: path.resolve('./dist')
+		path: DIST_DIR,
+		filename: '[name].[hash].js'
 	},
 	module: {
 		rules: [
@@ -33,13 +35,7 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [
-		new CleanWebpackPlugin(),
-		new HtmlWebPackPlugin({
-			template: './public/index.html',
-			filename: './index.html'
-		})
-	],
+	plugins: [ new CleanWebpackPlugin() ],
 	devServer: {
 		host: 'localhost',
 		port: 3000,
