@@ -1,5 +1,5 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-//const HtmlWebPackPlugin = require('html-webpack-plugin');
+//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
@@ -7,35 +7,32 @@ const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
 	mode: 'development',
-	entry: `${SRC_DIR}/index.js`,
+	entry: `${SRC_DIR}/index.jsx`,
 	output: {
 		path: DIST_DIR,
-		filename: '[name].[hash].js'
+		filename: 'bundle.[contentHash].js',
 	},
+	plugins:[new HtmlWebpackPlugin({
+		template: './client/src/template.html'
+	})],
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: [ { loader: 'babel-loader' } ]
+				use: { loader: 'babel-loader' }
 			},
 			{
-				test: /\.s(a|c)ss$/,
+				test: /\.scss$/,
 				use: [
-					{
-						loader: 'style-loader'
-					},
-					{
-						loader: 'css-loader'
-					},
-					{
-						loader: 'sass-loader'
-					}
+					'style-loader',
+					'css-loader',
+					'sass-loader'
 				]
 			}
 		]
 	},
-	plugins: [ new CleanWebpackPlugin() ],
+
 	devServer: {
 		host: 'localhost',
 		port: 3000,
