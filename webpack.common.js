@@ -1,5 +1,3 @@
-//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
 const merge = require('webpack-merge');
 const path = require('path');
@@ -12,21 +10,12 @@ module.exports = merge(common, {
 		main: `${SRC_DIR}/index.jsx`,
 		vendor: `${SRC_DIR}/vendor.js`
 	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: './client/src/template.html'
-		})
-	],
 	module: {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: { loader: 'babel-loader' }
-			},
-			{
-				test: /\.scss$/,
-				use: [ 'style-loader', 'css-loader', 'sass-loader' ]
 			},
 			{
 				test: /\.html$/,
