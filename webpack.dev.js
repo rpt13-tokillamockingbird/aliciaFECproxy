@@ -9,6 +9,6 @@ module.exports = merge(common, {
 	mode: 'development',
 	output: {
 		path: DIST_DIR,
-		filename: 'bundle.js'
+		filename: '[name].bundle.js'
 	}
 });

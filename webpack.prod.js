@@ -10,7 +10,7 @@ module.exports = merge(common, {
 	mode: 'production',
 	output: {
 		path: DIST_DIR,
-		filename: 'bundle.[contentHash].js'
+		filename: '[name].[contentHash].bundle.js'
 	},
 	plugins: [ new CleanWebpackPlugin() ]
 });

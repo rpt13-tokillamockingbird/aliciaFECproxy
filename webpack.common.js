@@ -8,7 +8,10 @@ const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist'); //
 
 module.exports = merge(common, {
-	entry: `${SRC_DIR}/index.jsx`,
+	entry: {
+		main: `${SRC_DIR}/index.jsx`,
+		vendor: `${SRC_DIR}/vendor.js`
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './client/src/template.html'
