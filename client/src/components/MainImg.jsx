@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-//import { Discovery } from 'aws-sdk';
+import colehaan1 from '../assets/colehaan1.jpg';
 
 class MainImg extends Component {
 	render () {
 		return (
 			<div className="MainImg">
-				<h5>Image Goes Here</h5>
+				<img src={colehaan1} />
 			</div>
 		);
 	}
