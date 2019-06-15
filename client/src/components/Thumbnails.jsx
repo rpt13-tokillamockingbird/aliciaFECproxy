@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import colehaan2 from '../assets/colehaan2.jpg';
-import colehaan3 from '../assets/colehaan3.jpg';
-import colehaan4 from '../assets/colehaan4.jpg';
-import colehaan5 from '../assets/colehaan5.jpg';
+import colehaan2mini from '../assets/colehaan2mini.jpg';
+import colehaan3mini from '../assets/colehaan3mini.jpg';
+import colehaan4mini from '../assets/colehaan4mini.jpg';
+import colehaan5mini from '../assets/colehaan5mini.jpg';
 
 class Thumbnails extends Component {
 	render () {
 		return (
 			<div className="Thumbnails">
-				<img src={colehaan2} />
-        <img src={colehaan3} />
-        <img src={colehaan4} />
-        <img src={colehaan5} />
+				<img src={colehaan2mini} />
+        <img src={colehaan3mini} />
+        <img src={colehaan4mini} />
+        <img src={colehaan5mini} />
 			</div>
 		);
 	}
