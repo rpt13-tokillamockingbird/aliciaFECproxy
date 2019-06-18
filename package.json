@@ -9,13 +9,12 @@
 	"scripts": {
 		"start": "webpack-dev-server --config webpack.dev.js --open",
 		"build": "webpack --config webpack.prod.js",
-		"test": "jest ./test"
+		"test": "jest ./test",
+		"server": "nodemon ./server/index.js"
 	},
 	"jest": {
 		"verbose": true,
-		"setupFilesAfterEnv": [
-			"./test/enzyme.setup.js"
-		]
+		"setupFilesAfterEnv": [ "./test/enzyme.setup.js" ]
 	},
 	"author": "aeasterwood",
 	"license": "ISC",

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainImg from './MainImg.jsx';
-import Thumbnails from './Thumbnails.jsx'
+import Thumbnails from './ThumbnailList.jsx';
+
 //import { Discovery } from 'aws-sdk';
 
 class App extends Component {

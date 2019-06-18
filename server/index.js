@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
-app.use(express.static(__dirname + '/../client/dist'));
+app.use('/:id', express.static(__dirname + '/../client/dist'));
 
 const randomImage = faker.image.fashion();
 //http://lorempixel.com/640/480/fashion

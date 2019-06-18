@@ -1,0 +1,31 @@
+{
+	"ImageInfo": [
+		{
+			"ProductId": 5000,
+			"ImageURL": "../client/src/assets/colehaan1.jpg",
+			"ThumbNailArray": [
+				"../client/src/assets/colehaan2mini.jpg",
+				"../client/src/assets/colehaan3mini.jpg",
+				"../client/src/assets/colehaan4mini.jpg"
+			]
+		},
+		{
+			"ProductId": 5001,
+			"ImageURL": "../client/src/assets/colehaan2.jpg",
+			"ThumbNailArray": [
+				"../client/src/assets/colehaan2mini.jpg",
+				"../client/src/assets/colehaan3mini.jpg",
+				"../client/src/assets/colehaan4mini.jpg"
+			]
+		},
+		{
+			"ProductId": 5002,
+			"ImageURL": "../client/src/assets/colehaan3.jpg",
+			"ThumbNailArray": [
+				"../client/src/assets/colehaan3mini.jpg",
+				"../client/src/assets/colehaan4mini.jpg",
+				"../client/src/assets/colehaan5mini.jpg"
+			]
+		}
+	]
+}

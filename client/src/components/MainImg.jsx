@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import colehaan1 from '../assets/colehaan1.jpg';
 
-class MainImg extends Component {
-	render () {
-		return (
-			<div className="MainImg">
-				<img src={colehaan1} />
-			</div>
-		);
-	}
-}
+const mainImg = () => {
+	return (
+		<div className="MainImg">
+			<img src={colehaan1} />
+		</div>
+	);
+};
 
-export default MainImg;
+export default mainImg;
