@@ -2,7 +2,7 @@
 .DS_Store
 
 ##Access keys##
-config.js
+config.json 
 
 ## NPM ##
 npm

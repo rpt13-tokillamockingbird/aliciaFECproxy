@@ -3,6 +3,7 @@ import colehaan2mini from '../assets/colehaan2mini.jpg';
 import colehaan3mini from '../assets/colehaan3mini.jpg';
 import colehaan4mini from '../assets/colehaan4mini.jpg';
 import colehaan5mini from '../assets/colehaan5mini.jpg';
+import imageList from '../../../database/index.json';
 
 const thumbnails = () => {
 	return (
