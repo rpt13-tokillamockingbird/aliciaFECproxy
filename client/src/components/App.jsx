@@ -3,8 +3,6 @@ import MainImg from './MainImg.jsx';
 import Thumbnails from './ThumbnailList.jsx';
 import imageList from '../../../database/index.json';
 
-//import { Discovery } from 'aws-sdk';
-
 class App extends Component {
 	constructor (props) {
 		super(props);
@@ -15,12 +13,17 @@ class App extends Component {
 		let id = window.location.pathname.split('/')[1];
 		id = parseInt(id);
 		let image = imageList.ImageInfo.filter((ele) => ele.ProductId === id);
-		console.log(image, id);
+		this.setState({
+			imageData: image
+		});
+		console.log('help');
+		console.log(this.state.imageData[0].ImageURL);
 	}
+
 	render () {
 		return (
 			<div className="App">
-				<MainImg />
+				<MainImg ImageUrl={this.state.imageData[0].ImageURL} />
 				<Thumbnails />
 			</div>
 		);

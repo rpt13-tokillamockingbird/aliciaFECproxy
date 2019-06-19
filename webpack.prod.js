@@ -7,7 +7,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = merge(common, {
@@ -15,18 +14,21 @@ module.exports = merge(common, {
 	output: {
 		path: DIST_DIR,
 		filename: '[name].[contentHash].bundle.js'
-  },
-  optimization: {
-    minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin(),
-      new HtmlWebpackPlugin({
-        template: './client/src/template.html',
-        minify:{
-          removeAttributeQuotes: true,
-          collapseWhitespace: true,
-          removeComments: true
-        }
-      })]
-  },
+	},
+	optimization: {
+		minimizer: [
+			new OptimizeCssAssetsPlugin(),
+			new TerserPlugin(),
+			new HtmlWebpackPlugin({
+				template: './client/src/template.html',
+				minify: {
+					removeAttributeQuotes: true,
+					collapseWhitespace: true,
+					removeComments: true
+				}
+			})
+		]
+	},
 	plugins: [ new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }), new CleanWebpackPlugin() ],
 	module: {
 		rules: [
