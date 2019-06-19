@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import colehaan2mini from '../assets/colehaan2mini.jpg';
 
-class Thumbnail extends Component {
-	render () {
+class Thumbnail2 extends Component {
+	render() {
 		return (
 			<div>
 				<img src={colehaan2mini} />
@@ -11,4 +11,4 @@ class Thumbnail extends Component {
 	}
 }
 
-export default Thumbnail;
+export default Thumbnail2;

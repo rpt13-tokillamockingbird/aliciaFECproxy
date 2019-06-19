@@ -29,12 +29,23 @@ module.exports = merge(common, {
 			})
 		]
 	},
-	plugins: [ new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }), new CleanWebpackPlugin() ],
+	plugins: [new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }), new CleanWebpackPlugin()],
 	module: {
 		rules: [
 			{
+				test: /\.jsx$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-react', '@babel/preset-env'],
+						plugins: ["@babel/plugin-proposal-class-properties", "transform-export-extensions"]
+					}
+				}
+			},
+			{
 				test: /\.scss$/,
-				use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 			}
 		]
 	}
